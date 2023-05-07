@@ -18,7 +18,7 @@ const move = (
   // Each cube object is a REFERENCE to a THREE.js Mesh object that
   // was atached to the THREE.js scene in:
   //
-  //		/js/three-bubble-sort/actions/pixelGrid.js (Line 34)
+  //		/js/three-selection-sort/actions/pixelGrid.js (Line 34)
   //
   let movingCube1 /*: boolean */ = true;
   let movingCube2 /*: boolean */ = true;
@@ -39,12 +39,12 @@ const move = (
     // console.log(`Trying cubes[${currentIndex}] and cubes[${nextIndex}]...`);
 
     // console.log(
-    //   `Comparing cubes[${currentIndex}] bubble value (${cube1.bubble_value}) with  cubes[${nextIndex}] bubble value (${cube2.bubble_value})`,
+    //   `Comparing cubes[${currentIndex}] selection value (${cube1.selection_value}) with  cubes[${nextIndex}] selection value (${cube2.selection_value})`,
     // );
 
-    if (cube1.bubble_value > cube2.bubble_value) {
+    if (cube1.selection_value > cube2.selection_value) {
       //   console.log(
-      //     `cubes[${currentIndex}] bubble value (${cube1.bubble_value}) > cubes[${nextIndex}] bubble value (${cube2.bubble_value})`,
+      //     `cubes[${currentIndex}] selection value (${cube1.selection_value}) > cubes[${nextIndex}] selection value (${cube2.selection_value})`,
       //   );
 
       //   console.log(`cubes.moving === `, cubes.moving);

@@ -35,17 +35,17 @@ export function gridDisplay() /*: gridDisplayObject */ {
     containerId /*: string */,
     showWorking /*: boolean */,
   ) /*: void */ {
-    const BubbleSort = getGridContainer(containerId);
-    while (BubbleSort.firstChild) {
-      BubbleSort.removeChild(BubbleSort.firstChild);
+    const SelectionSort = getGridContainer(containerId);
+    while (SelectionSort.firstChild) {
+      SelectionSort.removeChild(SelectionSort.firstChild);
     }
-    const cellWidth = BubbleSort.clientWidth / cols;
-    const cellHeight = BubbleSort.clientHeight / rows;
+    const cellWidth = SelectionSort.clientWidth / cols;
+    const cellHeight = SelectionSort.clientHeight / rows;
     const matrix = this.getMatrix(a, cols);
     const matrixXY = this.getMatrixXYValues(matrix, cellWidth, cellHeight);
     // Make the basic grid container
     const grid = document.createElement("ul");
-    BubbleSort.appendChild(grid);
+    SelectionSort.appendChild(grid);
     matrixXY.forEach((row) => {
       row.forEach((cell) => {
         const listItem = document.createElement("li");
@@ -60,11 +60,11 @@ export function gridDisplay() /*: gridDisplayObject */ {
       });
     });
     // Make the controls
-    makeControlsDisplay(BubbleSort, showWorking);
+    makeControlsDisplay(SelectionSort, showWorking);
   }
 
   function makeControlsDisplay(
-    BubbleSort /*: HTMLElement */,
+    SelectionSort /*: HTMLElement */,
     showWorking /*: boolean */,
   ) /*: void */ {
     const controls = document.createElement("div");
@@ -72,8 +72,8 @@ export function gridDisplay() /*: gridDisplayObject */ {
     controls.id = "controls";
     // makeSpeedControls(controls)
     makeShowWorkingToggleControl(controls, showWorking);
-    BubbleSort.appendChild(controls);
-    fromEvent(BubbleSort, "click") // eslint-disable-line no-undef
+    SelectionSort.appendChild(controls);
+    fromEvent(SelectionSort, "click") // eslint-disable-line no-undef
       .subscribe((event) => {
         window.requestAnimationFrame(() => {
           if (controls.className === "hidden") {
@@ -345,9 +345,9 @@ export function gridDisplay() /*: gridDisplayObject */ {
     if (constantTransitionSpeed) {
       return maxSecondsTransitionInterval;
     }
-    const BubbleSort = getGridContainer(containerId);
-    const cellWidth = Math.ceil(BubbleSort.clientWidth / cols);
-    const cellHeight = Math.ceil(BubbleSort.clientHeight / rows);
+    const SelectionSort = getGridContainer(containerId);
+    const cellWidth = Math.ceil(SelectionSort.clientWidth / cols);
+    const cellHeight = Math.ceil(SelectionSort.clientHeight / rows);
     const x = newX - currentX;
     const y = newY - currentY;
     const distance = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));

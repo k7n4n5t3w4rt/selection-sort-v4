@@ -1,6 +1,6 @@
 // @flow
 import { test, testPromise, should } from "../server/testy.js";
-import move from "../js/three-bubble-sort/actions/move.js";
+import move from "../js/three-selection-sort/actions/move.js";
 import cubesOrdered from "./fixtures/move_cubes_ordered.js";
 import anime from "./stubs/anime.js";
 import cubes1 from "./fixtures/move_cubes1.js";

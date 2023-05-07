@@ -36,7 +36,7 @@ export default (
 
       cube.position.z = j * scaleZ;
       cube.position.y = i * scaleY;
-      cube.bubble_value = cellColour;
+      cube.selection_value = cellColour;
       cube.castShadow = true;
       pixelGridGroup.add(cube);
       pixelGridCubes.push(cube);

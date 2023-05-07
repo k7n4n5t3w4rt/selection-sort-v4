@@ -18,14 +18,28 @@ const move = (
   // Each cube object is a REFERENCE to a THREE.js Mesh object that
   // was atached to the THREE.js scene in:
   //
-  //		/js/three-bubble-sort/actions/pixelGrid.js (Line 34)
+  //		/js/three-selection-sort/actions/pixelGrid.js (Line 34)
   //
   let movingCube1 /*: boolean */ = true;
   let movingCube2 /*: boolean */ = true;
   const currentIndex /*: number */ = cubes.currentIndex;
-  const nextIndex = cubes.currentIndex + 1;
+  const nextIndex = currentIndex + 1;
+  const indexOfItemWLowestSelectionValue = cubes.pixelGrid.reduce(
+    (acc, cube, index) => {
+      if (index > currentIndex) {
+        if (cube.selection_value < acc[1]) {
+          return [index, cube.selection_value];
+        } else {
+          return acc;
+        }
+      } else {
+        return acc;
+      }
+    },
+    [currentIndex, cubes.pixelGrid[currentIndex].selection_value],
+  )[0];
   const cube1 = cubes.pixelGrid[currentIndex];
-  const cube2 = cubes.pixelGrid[nextIndex];
+  const cube2 = cubes.pixelGrid[indexOfItemWLowestSelectionValue];
 
   if (cubes.moving === false) {
     // Check if we are actually at the end of the array of cubes
@@ -39,12 +53,12 @@ const move = (
     // console.log(`Trying cubes[${currentIndex}] and cubes[${nextIndex}]...`);
 
     // console.log(
-    //   `Comparing cubes[${currentIndex}] bubble value (${cube1.bubble_value}) with  cubes[${nextIndex}] bubble value (${cube2.bubble_value})`,
+    //   `Comparing cubes[${currentIndex}] selection value (${cube1.selection_value}) with  cubes[${nextIndex}] selection value (${cube2.selection_value})`,
     // );
 
-    if (cube1.bubble_value > cube2.bubble_value) {
+    if (cube1.selection_value > cube2.selection_value) {
       //   console.log(
-      //     `cubes[${currentIndex}] bubble value (${cube1.bubble_value}) > cubes[${nextIndex}] bubble value (${cube2.bubble_value})`,
+      //     `cubes[${currentIndex}] selection value (${cube1.selection_value}) > cubes[${nextIndex}] selection value (${cube2.selection_value})`,
       //   );
 
       //   console.log(`cubes.moving === `, cubes.moving);
@@ -129,7 +143,7 @@ const move = (
               cubes.moving = false;
               cubes.currentIndex = nextIndex;
               cubes.pixelGrid[currentIndex] = cube2;
-              cubes.pixelGrid[nextIndex] = cube1;
+              cubes.pixelGrid[indexOfItemWLowestSelectionValue] = cube1;
               return cubes;
             }
           },

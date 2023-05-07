@@ -21,7 +21,7 @@ type Position = {
 
 type Cube = {
   position: Position,
-  bubble_value: number,
+  selection_value: number,
 };
 
 type Cubes = {

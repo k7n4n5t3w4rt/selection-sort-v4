@@ -18,7 +18,7 @@ import { html } from "../../web_modules/htm/preact.js";
 // --------------------------------------------------
 // COMPONENTS
 // --------------------------------------------------
-import Params from "./ThreeBubbleSortParams.js";
+import Params from "./ThreeSelectionSortParams.js";
 // --------------------------------------------------
 // HELPERS
 // --------------------------------------------------
@@ -33,10 +33,10 @@ import {
   setSeed,
 } from "../../web_modules/simplestyle-js.js";
 
-setSeed(seedString("bubblesort"));
+setSeed(seedString("selectionsort"));
 
 const [styles] = createStyles({
-  bubbleSort: {
+  selectionSort: {
     width: "100%",
     height: "100%",
     backgroundImage: "url(/img/bg1.png)",
@@ -89,7 +89,7 @@ export default (props /*: Props */) /*: string */ => {
   });
 
   return html`
-    <div id="bubble-sort" className="${styles.bubbleSort}">
+    <div id="selection-sort" className="${styles.selectionSort}">
       <div id="dom-overlay">
         <div id="console-ui"></div>
       </div>

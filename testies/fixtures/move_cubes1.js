@@ -9,7 +9,7 @@ const cubes /*: Cubes */ = {
         x: 0,
         y: 0,
       },
-      bubble_value: 0,
+      selection_value: 0,
     },
     {
       position: {
@@ -17,7 +17,7 @@ const cubes /*: Cubes */ = {
         x: 0,
         y: 0,
       },
-      bubble_value: 1,
+      selection_value: 1,
     },
     {
       position: {
@@ -25,7 +25,7 @@ const cubes /*: Cubes */ = {
         x: 0,
         y: 1,
       },
-      bubble_value: 2,
+      selection_value: 2,
     },
     {
       position: {
@@ -33,7 +33,7 @@ const cubes /*: Cubes */ = {
         x: 0,
         y: 1,
       },
-      bubble_value: 3,
+      selection_value: 3,
     },
   ],
   moving: false,

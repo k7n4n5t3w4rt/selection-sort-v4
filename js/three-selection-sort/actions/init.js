@@ -36,10 +36,10 @@ export default (
   const stats = createStats();
   const ARContainer = document.createElement("div");
   ARContainer.id = "ar-container";
-  const bubbleSort = document.getElementById("bubble-sort");
+  const selectionSort = document.getElementById("selection-sort");
   // document.body.appendChild(container);
   // $FlowFixMe - Flow doesn't know about the DOM
-  bubbleSort.appendChild(ARContainer);
+  selectionSort.appendChild(ARContainer);
 
   // Make the scene, camera, geometry, etc.
   const scene /*: Object */ = new THREE.Scene();

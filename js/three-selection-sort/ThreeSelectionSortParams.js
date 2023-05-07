@@ -21,7 +21,7 @@ import {
   setSeed,
 } from "../../web_modules/simplestyle-js.js";
 
-setSeed(seedString("threebubblesortparams"));
+setSeed(seedString("threeselectionsortparams"));
 
 const [styles] = createStyles({
   paramsContainer: {
