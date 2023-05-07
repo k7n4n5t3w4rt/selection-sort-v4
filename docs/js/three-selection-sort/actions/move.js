@@ -22,20 +22,35 @@ const move = (
   //
   let movingCube1 /*: boolean */ = true;
   let movingCube2 /*: boolean */ = true;
-  const currentIndex /*: number */ = cubes.currentIndex;
-  const nextIndex = cubes.currentIndex + 1;
-  const cube1 = cubes.pixelGrid[currentIndex];
-  const cube2 = cubes.pixelGrid[nextIndex];
-
   if (cubes.moving === false) {
     // Check if we are actually at the end of the array of cubes
     // and set cubes to not be active so as to stop
     // the animation in render()
-    if (cube2 === undefined) {
+    if (cubes.currentIndex === cubes.pixelGrid.length) {
       cubes.active === false;
       cubes.currentIndex = 0;
       return cubes;
     }
+
+    const currentIndex /*: number */ = cubes.currentIndex;
+    const nextIndex = currentIndex + 1;
+    const indexOfItemWLowestSelectionValue = cubes.pixelGrid.reduce(
+      (acc, cube, index) => {
+        if (index > currentIndex) {
+          if (cube.selection_value < acc[1]) {
+            return [index, cube.selection_value];
+          } else {
+            return acc;
+          }
+        } else {
+          return acc;
+        }
+      },
+      [currentIndex, cubes.pixelGrid[currentIndex].selection_value],
+    )[0];
+    const cube1 = cubes.pixelGrid[currentIndex];
+    const cube2 = cubes.pixelGrid[indexOfItemWLowestSelectionValue];
+
     // console.log(`Trying cubes[${currentIndex}] and cubes[${nextIndex}]...`);
 
     // console.log(
@@ -129,7 +144,7 @@ const move = (
               cubes.moving = false;
               cubes.currentIndex = nextIndex;
               cubes.pixelGrid[currentIndex] = cube2;
-              cubes.pixelGrid[nextIndex] = cube1;
+              cubes.pixelGrid[indexOfItemWLowestSelectionValue] = cube1;
               return cubes;
             }
           },
