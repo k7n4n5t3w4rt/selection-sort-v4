@@ -7,12 +7,8 @@ const indxOfCbWthLwstVl = (currentIndex /*: number */) /*: function */ => (
   index /*: number */,
 ) /*: Array<number> */ => {
   // $FlowFixMe - currentIndex is in the enclosing scope
-  if (index > currentIndex) {
-    if (cube.selection_value < acc[1]) {
-      return [index, cube.selection_value];
-    } else {
-      return acc;
-    }
+  if (index > currentIndex && cube.selection_value < acc[1]) {
+    return [index, cube.selection_value];
   } else {
     return acc;
   }
