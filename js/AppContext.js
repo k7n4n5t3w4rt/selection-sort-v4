@@ -2,8 +2,8 @@
 import conf from "./config.js";
 import { h, render, createContext } from "../web_modules/preact.js";
 import { useReducer } from "../web_modules/preact/hooks.js";
-import {html} from "../web_modules/htm/preact.js";
-import produce from "../web_modules/immer.js";
+import { html } from "../web_modules/htm/preact.js";
+import { produce } from "../web_modules/immer.js";
 import stateStorage from "./state_storage.js";
 import Router from "../web_modules/preact-router.js";
 
