@@ -1,6 +1,7 @@
 // @flow
 import { test, testPromise, should } from "../../../server/testy.js";
 
+// Index of Cube with lowest selection_value
 const indxOfCbWthLwstVl = (currentIndex /*: number */) /*: function */ => (
   acc /*: Array<number> */,
   cube /*: Cube */,
