@@ -1,11 +1,11 @@
 // @flow
-import { test, testPromise, should } from "../server/testy.js";
-import move from "../js/three-selection-sort/actions/move.js";
-import cubesOrdered from "./fixtures/move_cubes_ordered.js";
-import anime from "./stubs/anime.js";
-import cubes1 from "./fixtures/move_cubes1.js";
-import cubes2 from "./fixtures/move_cubes2.js";
-import cubes3 from "./fixtures/move_cubes3.js";
+import { test, testPromise, should } from "../../../server/testy.js";
+import move from "./move.js";
+import cubesOrdered from "../../../testies/fixtures/move_cubes_ordered.js";
+import anime from "../../../testies/stubs/anime.js";
+import cubes1 from "../../../testies/fixtures/move_cubes1.js";
+import cubes2 from "../../../testies/fixtures/move_cubes2.js";
+import cubes3 from "../../../testies/fixtures/move_cubes3.js";
 
 const skip = false;
 
@@ -15,7 +15,7 @@ test(
     const speed = 0.1;
     const scaleZ = 1;
     let testCubes = cubes1;
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 5; i++) {
       testCubes = move(testCubes, speed, scaleZ, anime);
     }
     should(JSON.stringify(testCubes)).be.exactly(JSON.stringify(cubesOrdered));
@@ -29,7 +29,7 @@ test(
     const speed = 0.1;
     const scaleZ = 1;
     let testCubes = cubes2;
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 5; i++) {
       testCubes = move(testCubes, speed, scaleZ, anime);
     }
     should(JSON.stringify(testCubes)).be.exactly(JSON.stringify(cubesOrdered));
@@ -41,7 +41,7 @@ test("Move | Returns the cubes array in order  if the items passed in are in rev
   const speed = 0.1;
   const scaleZ = 1;
   let testCubes = cubes3;
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 5; i++) {
     testCubes = move(testCubes, speed, scaleZ, anime);
   }
   should(JSON.stringify(testCubes)).be.exactly(JSON.stringify(cubesOrdered));
