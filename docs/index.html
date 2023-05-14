@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>v1.3</title>
+	<title>v1.5</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -34,8 +34,8 @@
 
 	<script>
 		// ENV
-		window.NODE_ENV = "development";
-		window.REMEMBER_ME = false;
+		window.NODE_ENV = "_NODE_ENV_";
+		window.REMEMBER_ME = _REMEMBER_ME_;
 	</script>
 
 	<script src="/js/vendor/modernizr-3.8.0.min.js"></script>
@@ -52,45 +52,7 @@
 </head>
 
 <body>
-	<div id="goodthing" data-goodthing><div id="selection-sort" class="selectionSort_bjfmfdujbfbebjcv">
-	<div id="dom-overlay">
-		<div id="console-ui"></div>
-	</div>
-	<div id="params-container" class="paramsContainer_cisfftfbzdcbdi">
-		<fieldset>
-			<div>
-				<label for="cols">Columns:</label>
-				<output id="colsOutput" name="colsOutput" for="cols">5</output>
-				<input type="range" id="cols" name="cols" min="1" max="100" step="1" value="5" />
-			</div>
-			<div>
-				<label for="rows">Rows:</label>
-				<output id="rowsOutput" name="rowsOutput" for="rows">4</output>
-				<input type="range" name="rows" id="rows" min="1" max="100" step="1" value="4" />
-			</div>
-			<div>
-				<label for="speed">Speed:</label>
-				<output id="speedOutput" name="speedOutput" for="speed">1</output>
-				<input type="range" id="speed" name="speed" min="1" max="10" step="1" value="1" />
-			</div>
-			<div>
-				<label for="scaleX">Xcm:</label>
-				<output id="scaleXOutput" name="scaleXOutput" for="scaleX">10</output>
-				<input type="range" id="scaleX" name="scaleX" min="1" max="100" step="1" value="10" />
-			</div>
-			<div>
-				<label for="scaleY">Ycm:</label>
-				<output id="scaleYOutput" name="scaleYOutput" for="scaleY">10</output>
-				<input type="range" id="scaleY" name="scaleY" min="1" max="100" step="1" value="10" />
-			</div>
-			<div>
-				<label for="scaleZ">Zcm:</label>
-				<output id="scaleZOutput" name="scaleZOutput" for="scaleZ">10</output>
-				<input type="range" id="scaleZ" name="scaleZ" min="1" max="100" step="1" value="10" />
-			</div>
-		</fieldset>
-	</div>
-</div></div data-goodthing>
+	<div id="goodthing" data-goodthing><!-- GOODTHING --></div data-goodthing>
 	<!-- <script type="text/javascript" src="/js/vendor/materialize.js"></script> -->
 </body>
 
